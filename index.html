@@ -24,8 +24,192 @@ blah, blah, blah, blah
 -->
 
    <head> 
-      
-	   PUT YOUR OLD CODE IN HERE
+     <!-- I made sure to put the title in the head portion of the code-->
+      <title>Hello World</title>  
+	   <!-- Everything below this comment is for styling to the app -->
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta name="apple-mobile-web-app-capable" content="yes">
+      <link rel="stylesheet" href="w3.css">
+      <link rel="stylesheet" href="w3-colors-flat.css">
+	   <!-- Ended the header portion here by placing another head tage with a / -->
+   </head>   
+   
+  
+<script>  
+	<!-- made sure to put all my calculating codes in between the scripts -->
+        var allergy_count = 0;  
+        var cold_count = 0;
+        function allergyAdd(){
+            allergy_count = allergy_count + 1;
+		
+        }
+        function coldAdd(){
+            cold_count = cold_count + 1; 
+        }
+       <!-- right here I made the equation to calculate my results -->
+        function resultsPercent(){
+        var allergyPercent = (allergy_count/6)*100
+        var coldPercent = (cold_count/6)*100
+        var resultText = document.getElementById("results");
+        resultText.innerHTML = "Probability it is allergies =" + allergyPercent + "<br> Probability it is a cold =" + coldPercent;
+        }
+        <!-- I then placed this same equation in my results section replacing the original java script -->
+  </script> 
+
+
+
+<style>
+	<!-- This is the style portion of the code where I could change up the format of tghe app to make it look more appealing -->
+.body {
+     margin: 0em;
+}
+.page {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: -100vw;
+    overflow-y: auto;
+    z-index: 0;
+    background-color: hsl(0,0%,100%);
+}
+  .page:target {
+    left: 0vw;
+    z-index: 1;
+}
+	<!-- I didn't have to do alot here simply because it was given to me when I started coding, but you can change the format manually  -->
+</style>
+
+<body>
+	<!-- This si the start of the body section and where you insert the header text -->
+<div id="header" class="w3-container w3-flat-carrot">
+	<!-- Below this is the header -->
+	<h1>Cold or Allergies?</h1>
+</div>
+	<!-- Div's are added to divide each individual page -->
+<div id="content" class="w3-container">
+	<!-- The p's below are what is first seen right when the app begins -->
+	<p>Are you feeling like you might have a cold but wonder if it is allergies. Answer a few short questions to find out!</p>
+	<!-- Here it is very crucial to name the href to stay organized and know your pages -->
+	<a href="#one" class="w3-btn w3-grey w3-round"> Get Started </a>
+	
+	<p>The following code has been developed by students and/or researchers of the Freshman Research Initiative DIY Diagnostics Stream at The University of Texas at 		Austin.  This code is shared for demonstration purposes and should not be considered a product -- it is for entertainment purposes only. Any user of this code 			does so at their own risk. Members of the DIY Stream, FRI, and The University of Texas system are not liable for anything related to this code.</p>
+ 	
+	<p>THIS CODE SHOULD NOT BE USED TO DIAGNOSE ANY KIND OF MEDICAL CONDITION.</p>
+<
+<div class="page" id="one">
+	<!-- This is the first page to the questionaire -->
+	<div id="header" class="w3-container w3-flat-carrot">
+		<h1>Question 1</h1>
+	</div>
+	<!-- I inserted the first question inbetween the p's -->
+      <div id="content" class="w3-container">
+      <p>Are your eyes watery or itchy?</p>    
+      </div>
+	<!-- Here I insert the two buttons and their java script in the middle -->
+         <a href="#two" onclick="allergyAdd();" class="w3-btn w3-black"> Yes </a>
+<!-- After each href it will have the number of the page it want s to be directed to  -->
+         <a href="#two" onclick="coldAdd();" class="w3-btn w3-black"> No </a>
+<!-- In the button code above the buttons correspond with the question being asked -->
+
+</div>
+<!-- I copied the code for the first page and pasted it 6 times to create 7 pages -->
+<div class="page" id="two">
+<!-- This part of the code shows what will be on page two -->
+	<div class="w3-container w3-flat-carrot">
+		<h1>Question 2</h1>
+	</div>
+	
+	<div id="content" class="w3-container">
+		<p>Do you have a fever?</p>
+	</div>
+        <a href="#three" onclick="allergyAdd();" class="w3-btn w3-black"> No </a>
+<!-- After each href it will have the number of the page it want s to be directed to  -->
+        <a href="#three" onclick="coldAdd();" class="w3-btn w3-black"> Yes </a>
+    
+</div>	
+<!-- I spereated page 2 and 3 -->
+<div class="page" id="three">
+	<div class="w3-container w3-flat-carrot">
+		<h1>Question 3</h1>
+	</div>
+	
+	<div id="content" class="w3-container">
+		<p>Do you have a sore throat?</p>
+	</div>
+        <a href="#four" onclick="allergyAdd();" class="w3-btn w3-black"> No </a>
+<!-- After each href it will have the number of the page it want s to be directed to  -->
+        <a href="#four" onclick="coldAdd();" class="w3-btn w3-black"> Yes </a>
+    
+</div>	
+<!-- I seperated page 3 & 4 -->
+<div class="page" id="four">
+	<div class="w3-container w3-flat-carrot">
+		<h1>Question 4</h1>
+	</div>
+	
+	<div id="content" class="w3-container">
+		<p>Are your symptoms seasonal or chronic?</p>
+	</div>
+        <a href="#five" onclick="allergyAdd();" class="w3-btn w3-black"> Yes </a>
+<!-- After each href it will have the number of the page it want s to be directed to  -->
+        <a href="#five" onclick="coldAdd();" class="w3-btn w3-black"> No </a>
+    
+</div>	
+<!-- I seperated page 4 & 5 -->
+<div class="page" id="five">
+	<div class="w3-container w3-flat-carrot">
+		<h1>Question 5</h1> 
+	</div>
+	
+	<div id="content" class="w3-container">
+		<!-- I added my own cold directed question -->
+		<p>Are you experiencing a headache?</p>
+	</div>
+        <a href="#six" onclick="allergyAdd();" class="w3-btn w3-black"> No </a>
+<!-- After each href it will have the number of the page it want s to be directed to  -->
+        <a href="#six" onclick="coldAdd();" class="w3-btn w3-black"> Yes </a>
+    
+</div>	 
+ <!-- I seperated page 5 & 6 -->
+<div class="page" id="six">
+	<div class="w3-container w3-flat-carrot">
+		<h1>Question 6</h1> 
+	</div>
+	
+	<div id="content" class="w3-container">
+		<!-- I added my own allergy question here  -->
+		<p>Are you wheezing?</p>
+	</div>
+        <a href="#seven" onclick="allergyAdd();" class="w3-btn w3-black"> Yes </a>
+<!-- After each href it will have the number of the page it want s to be directed to  -->
+        <a href="#seven" onclick="coldAdd();" class="w3-btn w3-black"> No </a>
+    
+</div>	 
+<!-- I seperated page 6 & 7 --> 
+<div class="page" id="seven"> 
+<!-- THis is the reults portion where my calculations are displayed  -->
+	<div class="w3-container w3-flat-carrot">
+		<h1>RESULTS</h1>
+	</div>
+	
+	<div id="content" class="w3-container">
+<!-- In this button I changed the on click so that it corresponded with the resultsPercent equation I made in my script portion  -->
+        <a href="#seven" onclick="resultsPercent();" class="w3-btn w3-black"> Results </a>
+		<!-- I added this code provied on the app assignment  -->
+        <p id="results"></p>
+    </div>
+    
+</div>	
+<!-- Below is the footer where I left it very simple  -->
+<footer class="w3-bottom w3-container w3-flat-carrot">
+	<p>DIY!</p>
+</footer> 
+ 
+</body>
+	<!-- Here I closed the body of the app  -->
+</html>  
+<!-- I finished the HTML portion of the entire app  -->
+ 
 	   
-   </body>
-</html>
+
