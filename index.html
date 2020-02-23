@@ -6,9 +6,9 @@ THIS CODE SHOULD NOT BE USED TO DIAGNOSE ANY KIND OF MEDICAL CONDITION.
  
   
 Authors in chronological order of contribution:
-Author 1 
-Author 2
-  
+Tim Riedel
+Muskan Shah 
+
 Further Information: 
 http://diystream.cns.utexas.edu/
  
@@ -17,49 +17,44 @@ Timothy Riedel
 triedel@utexas.edu
  
 Brief Description of Goal of Code:
-The goal of this code is create my own idea and question, but the main goal is to add an image somewhere within the app.
+The goal of this code is create my own survey with a health issue similar to the one from the last app. Another goal is to add an image within the app at some point.
  
 Known Issues:
-There were very little to no issues with the coding of this app, it was a lot more smooth than app 2.
+The coding of this app was very similar to that of app 3. I knew the "results" page was what I struggled with most in app 3, so I made sure to really go through the code for that section carefully, line-by-line, to look for potential errors. Other then that, this app went fairly smoothly, including adding the image.
 -->
 
    <head> 
-     <!-- I made sure to put the title in the head portion of the code-->
+     <!-- The title has to go in the "head" section of the code.-->
       <title>Hello World</title>  
-	   <!-- Everything below this comment is for styling to the app -->
+	   <!-- The rest of the code in this portion is for style purposes. -->
       <meta name="viewport" content="width=device-width, initial-scale=1">
       <meta name="apple-mobile-web-app-capable" content="yes">
       <link rel="stylesheet" href="w3.css">
       <link rel="stylesheet" href="w3-colors-flat.css">
-	   <!-- Ended the header portion here by placing another head tage with a / -->
+	   <!-- Header portion was closed with the following tag. -->
    </head>   
     
    
-<script>  
-	<!-- made sure to put all my calculating codes in between the scripts -->
-        var allergy_count = 0;  
-        var intolerance_count = 0;
-        function allergyAdd(){
-            allergy_count = allergy_count + 1;
+<script>
+        var sprain_count = 0;
+        var fracture_count = 0;
+	<!-- I created two variables similar to the ones from the cold vs allergy project. -->
 		
+        function sprainAdd(){
+            sprain_count = sprain_count + 1;
         }
-        function intoleranceAdd(){
-            intolerance_count = intolerance_count + 1; 
+	
+        function fractureAdd(){
+            fracture_count = fracture_count + 1;
         }
-       <!-- right here I made the equation to calculate my results -->
-        function resultsPercent(){
-        var allergyPercent = (allergy_count/6)*100
-        var intolerancePercent = (intolerance_count/6)*100
-        var resultText = document.getElementById("results");
-        resultText.innerHTML = "Probability it is allergies =" + allergyPercent + "<br> Probability it is an intolerance =" + intolerancePercent;
-        }
-        <!-- I then placed this same equation in my results section replacing the original java script -->
-  </script> 
+	<!-- To make sure a count is added to the sprain and fracture options each time it is chosen, I created the functions above. The functions add one each to the total count each time it is chosen. -->
+
+  </script>
 
 
 
 <style>
-	<!-- This is the style portion of the code where I could change up the format of tghe app to make it look more appealing -->
+	<!-- This is the "style" section of the code that allows me to change the format and design of the app to make it visually appealing.-->
 .body {
      margin: 0em;
 }
@@ -77,19 +72,25 @@ There were very little to no issues with the coding of this app, it was a lot mo
     left: 0vw;
     z-index: 1;
 }
-	<!-- I didn't have to do alot here simply because it was given to me when I started coding, but you can change the format manually  -->
+   img, object {
+            	max-height:90%;
+        	max-width:90%;
+        	}
+
+	<!-- I didn't actually change anything within this section except adding the code for resizing of the image because it was already given in the base/skeleton code (just like it was in app 3). -->
 </style>
+	
 <body>
-	<!-- This is the start of the body section and where you insert the header text -->
+	<!-- This starts the "body" section of the app and is where I inserted the header text. -->
 <div id="header" class="w3-container w3-purple">
-	<!-- Below this is the header -->
-	<h1>Food allergies or Food intolerance?</h1>
+	<!-- Below is the header -->
+	<h1> Sprain or Fracture? </h1>
 </div>
-	<!-- Div's are added to divide each individual page -->
+	<!-- "Div" tags are used to divide the body of the code into individual pages.  -->
 <div id="content" class="w3-container">
-	<!-- The p's below are what is first seen right when the app begins -->
-	<p>Are you feeling like you might be intolerant to certain foods but wonder if it is actually an allergic reaction? Answer a few short questions to find out!</p>
-	<!-- Here it is very crucial to name the href to stay organized and know your pages -->
+	<!-- The "p" tags below are where the text go. -->
+	<p>Did you injure yourself near a joint or bone and are wondering if it is a sprain or fracture? Take this short quiz to get a better idea of what your symptoms indicate!</p>
+	<!-- The "href" tags are essential to keep track of your pages. -->
 	<a href="#one" class="w3-btn w3-purple w3-round"> Get Started </a>
 	
 	<p>The following code has been developed by students and/or researchers of the Freshman Research Initiative DIY Diagnostics Stream at The University of Texas at 		Austin.  This code is shared for demonstration purposes and should not be considered a product -- it is for entertainment purposes only. Any user of this code 			does so at their own risk. Members of the DIY Stream, FRI, and The University of Texas system are not liable for anything related to this code.</p>
@@ -97,121 +98,114 @@ There were very little to no issues with the coding of this app, it was a lot mo
 	<p>THIS CODE SHOULD NOT BE USED TO DIAGNOSE ANY KIND OF MEDICAL CONDITION.</p>
 	
 	<!--Below I inserted the code for my image -->
-		 <img src="https://coloradoallergy.com/wp-content/uploads/2018/03/Skin-Prick-Test4.jpg" alt="Allergy and Intolerance" width="325" height="200">
+	<img src="https://ix-cdn.b2e5.com/images/41628/41628_fed80b1aa6374010a69b4bed2aa453d6_1547045488.jpeg" alt="Twisted Ankle" width="1254" height="836">
 	
 <div class="page" id="one">
-	<!-- This is the first page to the questionaire -->
+	<!-- This is the first page to the quiz. -->
 	<div id="header" class="w3-container w3-purple">
 		<h1>Question 1</h1>
 	</div>
-	<!-- I inserted the first question inbetween the p's -->
-      <div id="content" class="w3-container">
-      <p>Are you experiencing cramping, constipation or gas?</p>    
-      </div>
-	<!-- Here I insert the two buttons and their java script in the middle -->
-         <a href="#two" onclick="allergyAdd();" class="w3-btn w3-purple w3-round"> No </a>
-<!-- After each href it will have the number of the page it want s to be directed to  -->
-         <a href="#two" onclick="intolerenceAdd();" class="w3-btn w3-purple w3-round"> Yes </a>
-<!-- In the button code above the buttons correspond with the question being asked -->
+	<!-- I inserted the first question in between the p's -->
+     	<div id="content" class="w3-container">
+     	<p>Is the pain only surrounding the injured area or does it increase when pressure/movement is applied to the injured area?</p>    
+     	</div>
+	<!-- Here I added the two buttons and their java script in the middle -->
+        <a href="#two" onclick="sprainAdd();" class="w3-btn w3-purple w3-round"> Surrounding area </a>
+<!-- Each "href" tag states the page number that the app needs to be directed to. -->
+        <a href="#two" onclick="fractureAdd();" class="w3-btn w3-purple w3-round"> Pressure/movement applied </a>
+<!-- The text for the answers correspond with a count for either "sprain" or "fracture". -->
 
 </div>
-<!-- I copied the code for the first page and pasted it 6 times to create 7 pages -->
+<!-- The same code from the first page was copied three times to create four pages (4 questions) total. -->
 <div class="page" id="two">
-<!-- This part of the code shows what will be on page two -->
+<!-- This section of the code shows what will be on page two. -->
 	<div class="w3-container w3-purple">
 		<h1>Question 2</h1>
 	</div>
 	
 	<div id="content" class="w3-container">
-		<p>Do you have recurring stress when you think about certain foods?</p>
+		<p>Are you completely unable to use the injured limb?</p>
 	</div>
-        <a href="#three" onclick="allergyAdd();" class="w3-btn w3-purple w3-round"> No </a>
-<!-- After each href it will have the number of the page it want s to be directed to  -->
-        <a href="#three" onclick="intoleranceAdd();" class="w3-btn w3-purple w3-round"> Yes </a>
+        <a href="#three" onclick="sprainAdd();" class="w3-btn w3-purple w3-round"> No </a>
+<!-- Each "href" tag states the page number that the app needs to be directed to. -->
+        <a href="#three" onclick="fractureAdd();" class="w3-btn w3-purple w3-round"> Yes </a>
     
 </div>	
-<!-- I spereated page 2 and 3 -->
+<!-- Separates page 2 & 3 -->
 <div class="page" id="three">
 	<div class="w3-container w3-purple">
 		<h1>Question 3</h1>
 	</div>
 	
 	<div id="content" class="w3-container">
-		<p>Are you experiencing shortness of breath?</p>
+		<p>Is the injured area look abnormal/deformed?</p>
+		<img src="https://ryortho.com/wp-content/uploads/2016/05/NewStudySupports_SprainedAnkle_WEB.jpg" alt="Swollen Ankle" width="730" height="350">
+
 	</div>
-<!-- After each href it will have the number of the page it want it to be directed to  -->
-        <a href="#four" onclick="intoleranceAdd();" class="w3-btn w3-purple w3-round"> No </a>
-	<a href="#four" onclick="allergyAdd();" class="w3-btn w3-purple w3-round"> Yes </a>
+<!-- Each "href" tag states the page number that the app needs to be directed to. -->
+        <a href="#four" onclick="sprainAdd();" class="w3-btn w3-purple w3-round"> No </a>
+	<a href="#four" onclick="fractureAdd();" class="w3-btn w3-purple w3-round"> Yes </a>
     
 </div>	
-<!-- I seperated page 3 & 4 -->
+<!-- Separates page 3 & 4 -->
 <div class="page" id="four">
 	<div class="w3-container w3-purple">
 		<h1>Question 4</h1>
 	</div>
 	
 	<div id="content" class="w3-container">
-		<p>Are you vomitting or experiencing a headache?</p>
+		<p>Did you hear or feel a pop in a joint during the time of the injury?</p>
 	</div>
-        <a href="#five" onclick="allergyAdd();" class="w3-btn w3-purple w3-round"> No </a>
-<!-- After each href it will have the number of the page it want s to be directed to  -->
-        <a href="#five" onclick="intoleranceAdd();" class="w3-btn w3-purple w3-round"> Yes </a>
-    
+        <a href="#five" onclick="fractureAdd();" class="w3-btn w3-purple w3-round"> No </a>
+<!-- Each "href" tag states the page number that the app needs to be directed to. -->
+        <a href="#five" onclick="sprainAdd();" class="w3-btn w3-purple w3-round"> Yes </a>
+	
 </div>	
-<!-- I seperated page 4 & 5 -->
+<!-- Separates page 4 & 5 -->
 <div class="page" id="five">
 	<div class="w3-container w3-purple">
-		<h1>Question 5</h1> 
+		<h1>Question 5</h1>
 	</div>
 	
 	<div id="content" class="w3-container">
-		<!-- I added my own cold directed question -->
-		<p>Do you have a rash or hives?</p>
+		<p>Does the injured area feel numb?</p>
 	</div>
-<!-- After each href it will have the number of the page it want s to be directed to  -->
-        <a href="#six" onclick="intoleranceAdd();" class="w3-btn w3-purple w3-round"> No </a>
-     <a href="#six" onclick="allergyAdd();" class="w3-btn w3-purple w3-round"> Yes </a>
-	
-</div>	 
- <!-- I seperated page 5 & 6 -->
-<div class="page" id="six">
-	<div class="w3-container w3-purple">
-		<h1>Question 6</h1> 
-	</div>
-	
-	<div id="content" class="w3-container">
-		<!-- I added my own allergy question here  -->
-		<p>Are you wheezing or itching?</p>
-	</div>
-<!-- After each href it will have the number of the page it want s to be directed to  -->
-        <a href="#seven" onclick="intoleranceAdd();" class="w3-btn w3-purple w3-round"> No </a>
-	<a href="#seven" onclick="allergyAdd();" class="w3-btn w3-purple w3-round"> Yes </a>
+        <a href="#results" onclick="sprainAdd();" class="w3-btn w3-purple w3-round"> No </a>
+<!-- Each "href" tag states the page number that the app needs to be directed to. -->
+        <a href="#results" onclick="fractureAdd();" class="w3-btn w3-purple w3-round"> Yes </a>
     
-</div>	 
-<!-- I seperated page 6 & 7 --> 
-<div class="page" id="seven"> 
-<!-- THis is the reults portion where my calculations are displayed  -->
-	<div class="w3-container w3-purple">
-		<h1>RESULTS</h1>
+</div>		 
+<!-- Separates page 5 & 6 (results) -->
+<div class="page" id="results">
+<!-- The code below is for the "results" page that displays the percentages from the questionnaire. -->
+	<div id="header" class="w3-container w3-purple">
+		<h1>Results</h1>
 	</div>
+		
+	<script>
+	function showResults(){
+            var resultText = document.getElementById("results");
+	    var total = fracture_count + sprain_count;
+	    var fracturePercent = (((fracture_count)/(total))*100);
+	    var sprainPercent = (((sprain_count)/(total))*100);
+    	    resultText.innerHTML = "Probability it is a fracture =" + fracturePercent + "<br> Probability it is a sprain =" + sprainPercent;
+	}
+		// The results portion of my code from App 3 functioned properly, so I simply used that same code in this questionnaire, modifying the variables and functions to match my health issue for app 4. 
+	</script>
 	
-	<div id="content" class="w3-container">
-<!-- In this button I changed the on click so that it corresponded with the resultsPercent equation I made in my script portion  -->
-        <a href="#seven" onclick="resultsPercent();" class="w3-btn w3-black w3-round"> Results </a>
-		<!-- I added this code provied on the app assignment  -->
-        <p id="results"></p>
-    </div> 
+	<a href="#results" onclick="showResults();" class="w3-btn w3-black"> Show Results </a>
+</div>
     
 </div>	
-<!-- Below is the footer where I left it very simple  -->
+<!-- Below is the footer, which was left unmodified from the forked code. -->
 <footer class="w3-bottom w3-container w3-purple">
 	<p>DIY!</p>
 </footer> 
  
 </body>
-	<!-- Here I closed the body of the app  -->
+	<!-- The "body" tag above closes the body section of the app. -->
 </html>  
-<!-- I finished the HTML portion of the entire app  -->
+<!-- The "html" tag above closes the HTML section of the entire app (so the entirety of the app). -->
  
 	   
  
