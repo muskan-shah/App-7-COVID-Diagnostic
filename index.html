@@ -17,16 +17,16 @@ Timothy Riedel
 triedel@utexas.edu
  
 Brief Description of Goal of Code:
-The goal of this code is create my own survey with a health issue similar to the one from the last app. Another goal is to add an image within the app at some point.
+The goal of this code is create my own survey to "diagnose" patients with COVID-19 vs. other sicknesses (eg., cold, flu, seasonal allergies). Another goal is to display these results with some sort of visual using the canvas.
  
 Known Issues:
-The coding of this app was very similar to that of app 3. I knew the "results" page was what I struggled with most in app 3, so I made sure to really go through the code for that section carefully, line-by-line, to look for potential errors. Other then that, this app went fairly smoothly, including adding the image.
+The coding of this app is very similar to that of app 4. I knew the "results" page was what I struggled with most in app 3, so I made sure to really go through the code for that section carefully, line-by-line, to look for potential errors. Other then that, this app went fairly smoothly, including adding the image.
 Going back and looking through the rubric from app 3, I noticed my header for the results page disappears when the percentages appear. I tried testing several different solutions (creating a new page, getting rid of the show results button and having the app go directly to the results instead, etc.), but I was unable to figure out a solution that worked. I had this same issue last app as well, and am hoping a mentor may be able to give me some more insight into how to solve this issue.
 -->
 
    <head> 
      <!-- The title has to go in the "head" section of the code.-->
-      <title>Hello World</title>  
+      <title>Covid-19 Diagnostic</title>  
 	   <!-- The rest of the code in this portion is for style purposes. -->
       <meta name="viewport" content="width=device-width, initial-scale=1">
       <meta name="apple-mobile-web-app-capable" content="yes">
@@ -37,25 +37,36 @@ Going back and looking through the rubric from app 3, I noticed my header for th
     
    
 <script>
-        var sprain_count = 0;
-        var fracture_count = 0;
-	<!-- I created two variables similar to the ones from the cold vs allergy project. -->
+        var covid_count = 0;
+        var cold_count = 0;
+	var flu_count = 0;
+	var allergies_count = 0;
+	//I created four variables similar to the ones from app four, which was the sprain vs fracture app.
 		
-        function sprainAdd(){
-            sprain_count = sprain_count + 1;
+        function covidAdd(){
+            covid_count = covid_count + 1;
         }
 	
-        function fractureAdd(){
-            fracture_count = fracture_count + 1;
+        function coldAdd(){
+            cold_count = cold_count + 1;
         }
-	<!-- To make sure a count is added to the sprain and fracture options each time it is chosen, I created the functions above. The functions add one each to the total count each time it is chosen. -->
+
+        function fluAdd(){
+            flu_count = flu_count + 1;
+        }
+	
+        function allergiesAdd(){
+            allergies_count = allergies_count + 1;
+        }
+	
+	//To make sure a count is added to the proper corresponding option each time it is chosen, I created the functions above. The functions add one each to the total count each time it is chosen.
 
   </script>
 
 
 
 <style>
-	<!-- This is the "style" section of the code that allows me to change the format and design of the app to make it visually appealing.-->
+	<!--This is the "style" section of the code that allows me to change the format and design of the app to make it visually appealing.-->
 .body {
      margin: 0em;
 }
@@ -78,19 +89,19 @@ Going back and looking through the rubric from app 3, I noticed my header for th
       max-width:90%;
 }
 
-	<!-- I didn't actually change anything within this section except adding the code for resizing of the image because it was already given in the base/skeleton code (just like it was in app 3). -->
+	<!-- I didn't actually change anything within this section except adding the code for resizing of the image because it was already given in the base/skeleton code (just like it was in app 4). -->
 </style>
 	
 <body>
 	<!-- This starts the "body" section of the app and is where I inserted the header text. -->
 <div id="header" class="w3-container w3-purple">
 	<!-- Below is the header -->
-	<h1> Sprain or Fracture? </h1>
+	<h1> Corona Catcher </h1>
 </div>
 	<!-- "Div" tags are used to divide the body of the code into individual pages.  -->
 <div id="content" class="w3-container">
 	<!-- The "p" tags below are where the text go. -->
-	<p>Did you injure yourself near a joint or bone and are wondering if it is a sprain or fracture? Take this short quiz to get a better idea of what your symptoms indicate!</p>
+	<p>Are you feeling symptoms of a cold or allergies, but are scared it may be something worse like COVID-19? Take this short quiz to get a better idea of what diagnosis your symptoms indicate!</p>
 	<!-- The "href" tags are essential to keep track of your pages. -->
 	<a href="#one" class="w3-btn w3-purple w3-round"> Get Started </a>
 	
@@ -108,16 +119,15 @@ Going back and looking through the rubric from app 3, I noticed my header for th
 	</div>
 	<!-- I inserted the first question in between the p's -->
      	<div id="content" class="w3-container">
-     	<p>Is the pain only surrounding the injured area or does it increase when pressure/movement is applied to the injured area?</p>    
+     	<p>Do you have a dry cough?</p>    
      	</div>
 	<!-- Here I added the two buttons and their java script in the middle -->
-        <a href="#two" onclick="sprainAdd();" class="w3-btn w3-purple w3-round"> Surrounding area </a>
+        <a href="#two" onclick="covidAdd();coldAdd();fluAdd();" class="w3-btn w3-purple w3-round"> Yes </a>
 <!-- Each "href" tag states the page number that the app needs to be directed to. -->
-        <a href="#two" onclick="fractureAdd();" class="w3-btn w3-purple w3-round"> Pressure/movement applied </a>
-<!-- The text for the answers correspond with a count for either "sprain" or "fracture". -->
+        <a href="#two" onclick="allergiesAdd();" class="w3-btn w3-purple w3-round"> No </a>
+<!-- Dry cough is only NOT a symptom for allergies, so the rest of the illnesses adds counts for the "Yes" button, while allergies adds a count for the "No" button.-->
 
 </div>
-<!-- The same code from the first page was copied three times to create four pages (4 questions) total. -->
 <div class="page" id="two">
 <!-- This section of the code shows what will be on page two. -->
 	<div class="w3-container w3-purple">
@@ -125,12 +135,13 @@ Going back and looking through the rubric from app 3, I noticed my header for th
 	</div>
 	
 	<div id="content" class="w3-container">
-		<p>Are you completely unable to use the injured limb?</p>
+		<p>Are you experiencing shortness of breath?</p>
 	</div>
-        <a href="#three" onclick="sprainAdd();" class="w3-btn w3-purple w3-round"> No </a>
+        <a href="#three" onclick="covidAdd();" class="w3-btn w3-purple w3-round"> Yes </a>
 <!-- Each "href" tag states the page number that the app needs to be directed to. -->
-        <a href="#three" onclick="fractureAdd();" class="w3-btn w3-purple w3-round"> Yes </a>
-    
+        <a href="#three" onclick="allergiesAdd();coldAdd();fluAdd();" class="w3-btn w3-purple w3-round"> No </a>
+<!-- For shortness of breath, corona is the only illness that has it as a symptom, so it is the only variable that will be counted for if the patient answers yes.  -->
+ 
 </div>	
 <!-- Separates page 2 & 3 -->
 <div class="page" id="three">
@@ -139,14 +150,15 @@ Going back and looking through the rubric from app 3, I noticed my header for th
 	</div>
 	
 	<div id="content" class="w3-container">
-		<p>Is the injured area look abnormal/deformed?</p>
+		<p>Are you sneezing regularly?</p>
 		<img src="https://www.fastmed.com/wp-content/files/health-resources/related-searches/287px-Sprained_ankle_30min-process-s350x293.jpg" alt="Swollen Ankle" width="287" height="240">
 
 	</div>
 <!-- Each "href" tag states the page number that the app needs to be directed to. -->
-        <a href="#four" onclick="sprainAdd();" class="w3-btn w3-purple w3-round"> No </a>
-	<a href="#four" onclick="fractureAdd();" class="w3-btn w3-purple w3-round"> Yes </a>
-    
+        <a href="#four" onclick="allergiesAdd();coldAdd()" class="w3-btn w3-purple w3-round"> Yes </a>
+	<a href="#four" onclick="covidAdd();fluAdd();" class="w3-btn w3-purple w3-round"> No </a>
+<!-- Sneezing is a symptom of allergies and cold, so it adds a count to those illnesses when someone clicks "Yes."-->
+	
 </div>	
 <!-- Separates page 3 & 4 -->
 <div class="page" id="four">
@@ -155,12 +167,16 @@ Going back and looking through the rubric from app 3, I noticed my header for th
 	</div>
 	
 	<div id="content" class="w3-container">
-		<p>Did you hear or feel a pop in a joint during the time of the injury?</p>
+		<p>Do you have a runny or stuffy nose?</p>
 	</div>
-        <a href="#five" onclick="fractureAdd();" class="w3-btn w3-purple w3-round"> No </a>
+        <a href="#five" onclick="coldAdd();allergiesAdd();" class="w3-btn w3-purple w3-round"> Usually </a>
 <!-- Each "href" tag states the page number that the app needs to be directed to. -->
-        <a href="#five" onclick="sprainAdd();" class="w3-btn w3-purple w3-round"> Yes </a>
-	
+	<a href="#five" onclick="fluAdd();" class="w3-btn w3-purple w3-round"> Sometimes </a>
+        <a href="#five" onclick="covidAdd();" class="w3-btn w3-purple w3-round"> Never </a>
+<!-- According to the chart, it is common to have a runny or stuffy nose with a cold or allergies, 
+so I put those with "Yes." It sometimes occurs with the flu, so I put that as "Sometimes." It rarely occurs with 
+covid, so I put that with "No" to keep things simple.-->
+
 </div>	
 <!-- Separates page 4 & 5 -->
 <div class="page" id="five">
@@ -169,14 +185,114 @@ Going back and looking through the rubric from app 3, I noticed my header for th
 	</div>
 	
 	<div id="content" class="w3-container">
-		<p>Does the injured area feel numb?</p>
+		<p>Do you have a sore throat?</p>
 	</div>
-        <a href="#results" onclick="sprainAdd();" class="w3-btn w3-purple w3-round"> No </a>
+        <a href="#six" onclick="covidAdd();coldAdd();fluAdd();" class="w3-btn w3-purple w3-round"> Yes </a>
 <!-- Each "href" tag states the page number that the app needs to be directed to. -->
-        <a href="#results" onclick="fractureAdd();" class="w3-btn w3-purple w3-round"> Yes </a>
-    
-</div>		 
-<!-- Separates page 5 & 6 (results) -->
+        <a href="#six" onclick="allergiesAdd();" class="w3-btn w3-purple w3-round"> No </a>
+<!-- I decided to put covid, cold, and flu as "Yes" for sore throat as a symptom because they were considered 
+"sometimes" on the chart. I have rarely heard of sore throat as a symptom of allergies, so I put that as a "No." -->   
+
+</div>
+<!-- Separates page 5 & 6 -->
+<div class="page" id="six">
+	<div class="w3-container w3-purple">
+		<h1>Question 6</h1>
+	</div>
+	
+	<div id="content" class="w3-container">
+		<p>Have you been experiencing frequent fevers for consecutive days?</p>
+	</div>
+        <a href="#seven" onclick="covidAdd();fluAdd();" class="w3-btn w3-purple w3-round"> Yes </a>
+<!-- Each "href" tag states the page number that the app needs to be directed to. -->
+        <a href="#seven" onclick="coldAdd();allergiesAdd();" class="w3-btn w3-purple w3-round"> No </a>
+<!-- I put covid and flu as "Yes" for fevers and cold and allergies as "No." 
+I chose to not put a "sometimes" option because that can be very vague and may distort the results, 
+so I stuck with keeping fevers as a yes in covid and the flu (in which they are more common).-->		 
+
+</div>
+<!-- Separates page 6 & 7 -->
+<div class="page" id="seven">
+	<div class="w3-container w3-purple">
+		<h1>Question 7</h1>
+	</div>
+	
+	<div id="content" class="w3-container">
+		<p>Are you feeling fatigue (tiredness or weakness)?</p>
+	</div>
+        <a href="#eight" onclick="covidAdd();fluAdd();coldAdd();" class="w3-btn w3-purple w3-round"> Yes </a>
+<!-- Each "href" tag states the page number that the app needs to be directed to. -->
+        <a href="#eight" onclick="allergiesAdd();" class="w3-btn w3-purple w3-round"> No </a>
+<!-- Fatigue is more common with covid, flu, and cold than it is for allergies, so I put the first three as "Yes" 
+and allergies as "No."-->		 
+
+</div>
+<!-- Separates page 7 & 8 -->
+<div class="page" id="eight">
+	<div class="w3-container w3-purple">
+		<h1>Question 8</h1>
+	</div>
+	
+	<div id="content" class="w3-container">
+		<p>Have you been getting headaches?</p>
+	</div>
+        <a href="#nine" onclick="covidAdd();fluAdd();allergiesAdd();" class="w3-btn w3-purple w3-round"> Yes </a>
+<!-- Each "href" tag states the page number that the app needs to be directed to. -->
+        <a href="#nine" onclick="coldAdd();" class="w3-btn w3-purple w3-round"> No </a>
+<!-- Headaches are mostly common with the flu, but also sometimes with allergies and covid, so I put those all as "Yes." 
+It is rare with colds, so I put cold as "No."-->		 
+
+</div>
+<!-- Separates page 8 & 9 -->
+<div class="page" id="nine">
+	<div class="w3-container w3-purple">
+		<h1>Question 9</h1>
+	</div>
+	
+	<div id="content" class="w3-container">
+		<p>Have you been experiencing body aches and pains?</p>
+	</div>
+        <a href="#ten" onclick="covidAdd();fluAdd();coldAdd();" class="w3-btn w3-purple w3-round"> Yes </a>
+<!-- Each "href" tag states the page number that the app needs to be directed to. -->
+        <a href="#ten" onclick="allergiesAdd();" class="w3-btn w3-purple w3-round"> No </a>
+<!-- Body aches occur commonly with the flu and cold, but also sometimes with covid, so those are all "Yes." 
+It it not a symptom of allergies, so I put that as "No."-->
+
+</div>
+<!-- Separates page 9 & 10 -->
+<div class="page" id="ten">
+	<div class="w3-container w3-purple">
+		<h1>Question 10</h1>
+	</div>
+	
+	<div id="content" class="w3-container">
+		<p>Have you been experiencing diarrhea?</p>
+	</div>
+        <a href="#eleven" onclick="covidAdd();" class="w3-btn w3-purple w3-round"> Yes </a>
+<!-- Each "href" tag states the page number that the app needs to be directed to. -->
+        <a href="#eleven" onclick="coldAdd();fluAdd();allergiesAdd();" class="w3-btn w3-purple w3-round"> No </a>
+<!-- Diarrhea is only really a symptom of covid, so I only put "Yes" for that.-->
+
+</div>
+<!-- Separates page 10 & 11 -->
+<div class="page" id="eleven">
+	<div class="w3-container w3-purple">
+		<h1>Question 11</h1>
+	</div>
+	
+	<div id="content" class="w3-container">
+		<p>How quickly and long have you been experiencing your symptoms?</p>
+	</div>
+        <a href="#results" onclick="coldAdd();" class="w3-btn w3-purple w3-round"> Gradual onset; less than 2 weeks </a>
+<!-- Each "href" tag states the page number that the app needs to be directed to. -->
+        <a href="#results" onclick="fluAdd()" class="w3-btn w3-purple w3-round"> Abrupt onset; 1-2 weeks </a>
+        <a href="#results" onclick="allergiesAdd();" class="w3-btn w3-purple w3-round"> Abrupt onset; several weeks </a>
+        <a href="#results" onclick="covidAdd();" class="w3-btn w3-purple w3-round"> Abrupt onset; 7-25 days </a>
+<!-- I assigned these last four based on the top of the chart that described the length and onset of symptoms. 
+They all vary quite a bit, so I made a different option for each of them.-->
+
+</div>	
+<!-- Separates page 11 & 12 (results) -->
 <div class="page" id="results">
 <!-- The code below is for the "results" page that displays the percentages from the questionnaire. -->
 	<div id="header" class="w3-container w3-purple">
