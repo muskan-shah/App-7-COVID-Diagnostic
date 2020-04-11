@@ -114,7 +114,7 @@ Going back and looking through the rubric from app 3, I noticed my header for th
 	
 <div class="page" id="one">
 	<!-- This is the first page to the quiz. -->
-	<div id="header" class="w3-container w3-purple">
+	<div id="header" class="w3-container w3-flat-belize-hole">
 		<h1>Question 1</h1>
 	</div>
 	<!-- I inserted the first question in between the p's -->
@@ -122,22 +122,22 @@ Going back and looking through the rubric from app 3, I noticed my header for th
      	<p>Do you have a dry cough?</p>    
      	</div>
 	<!-- Here I added the two buttons and their java script in the middle -->
-        <a href="#two" onclick="covidAdd();coldAdd();fluAdd();" class="w3-btn w3-purple w3-round"> Yes </a>
+        <a href="#two" onclick="covidAdd();coldAdd();fluAdd();" class="w3-btn w3-flat-belize-hole w3-round"> Yes </a>
 <!-- Each "href" tag states the page number that the app needs to be directed to. -->
-        <a href="#two" onclick="allergiesAdd();" class="w3-btn w3-purple w3-round"> No </a>
+        <a href="#two" onclick="allergiesAdd();" class="w3-btn w3-flat-belize-hole w3-round"> No </a>
 <!-- Dry cough is only NOT a symptom for allergies, so the rest of the illnesses adds counts for the "Yes" button, while allergies adds a count for the "No" button.-->
 
 </div>
 <div class="page" id="two">
 <!-- This section of the code shows what will be on page two. -->
-	<div class="w3-container w3-purple">
+	<div class="w3-container w3-flat-belize-holee">
 		<h1>Question 2</h1>
 	</div>
 	
 	<div id="content" class="w3-container">
 		<p>Are you experiencing shortness of breath?</p>
 	</div>
-        <a href="#three" onclick="covidAdd();" class="w3-btn w3-purple w3-round"> Yes </a>
+        <a href="#three" onclick="covidAdd();" class="w3-btn w3-flat-belize-hole w3-round"> Yes </a>
 <!-- Each "href" tag states the page number that the app needs to be directed to. -->
         <a href="#three" onclick="allergiesAdd();coldAdd();fluAdd();" class="w3-btn w3-purple w3-round"> No </a>
 <!-- For shortness of breath, corona is the only illness that has it as a symptom, so it is the only variable that will be counted for if the patient answers yes.  -->
@@ -155,24 +155,24 @@ Going back and looking through the rubric from app 3, I noticed my header for th
 
 	</div>
 <!-- Each "href" tag states the page number that the app needs to be directed to. -->
-        <a href="#four" onclick="allergiesAdd();coldAdd()" class="w3-btn w3-purple w3-round"> Yes </a>
-	<a href="#four" onclick="covidAdd();fluAdd();" class="w3-btn w3-purple w3-round"> No </a>
+        <a href="#four" onclick="allergiesAdd();coldAdd()" class="w3-btn w3-flat-belize-hole w3-round"> Yes </a>
+	<a href="#four" onclick="covidAdd();fluAdd();" class="w3-btn w3-flat-belize-hole w3-round"> No </a>
 <!-- Sneezing is a symptom of allergies and cold, so it adds a count to those illnesses when someone clicks "Yes."-->
 	
 </div>	
 <!-- Separates page 3 & 4 -->
 <div class="page" id="four">
-	<div class="w3-container w3-purple">
+	<div class="w3-container w3-flat-belize-hole">
 		<h1>Question 4</h1>
 	</div>
 	
 	<div id="content" class="w3-container">
 		<p>Do you have a runny or stuffy nose?</p>
 	</div>
-        <a href="#five" onclick="coldAdd();allergiesAdd();" class="w3-btn w3-purple w3-round"> Usually </a>
+        <a href="#five" onclick="coldAdd();allergiesAdd();" class="w3-btn w3-flat-belize-hole w3-round"> Usually </a>
 <!-- Each "href" tag states the page number that the app needs to be directed to. -->
-	<a href="#five" onclick="fluAdd();" class="w3-btn w3-purple w3-round"> Sometimes </a>
-        <a href="#five" onclick="covidAdd();" class="w3-btn w3-purple w3-round"> Never </a>
+	<a href="#five" onclick="fluAdd();" class="w3-btn w3-flat-belize-hole w3-round"> Sometimes </a>
+        <a href="#five" onclick="covidAdd();" class="w3-btn w3-flat-belize-hole w3-round"> Never </a>
 <!-- According to the chart, it is common to have a runny or stuffy nose with a cold or allergies, 
 so I put those with "Yes." It sometimes occurs with the flu, so I put that as "Sometimes." It rarely occurs with 
 covid, so I put that with "No" to keep things simple.-->
@@ -180,32 +180,32 @@ covid, so I put that with "No" to keep things simple.-->
 </div>	
 <!-- Separates page 4 & 5 -->
 <div class="page" id="five">
-	<div class="w3-container w3-purple">
+	<div class="w3-container w3-flat-belize-hole">
 		<h1>Question 5</h1>
 	</div>
 	
 	<div id="content" class="w3-container">
 		<p>Do you have a sore throat?</p>
 	</div>
-        <a href="#six" onclick="covidAdd();coldAdd();fluAdd();" class="w3-btn w3-purple w3-round"> Yes </a>
+        <a href="#six" onclick="covidAdd();coldAdd();fluAdd();" class="w3-btn w3-flat-belize-hole w3-round"> Yes </a>
 <!-- Each "href" tag states the page number that the app needs to be directed to. -->
-        <a href="#six" onclick="allergiesAdd();" class="w3-btn w3-purple w3-round"> No </a>
+        <a href="#six" onclick="allergiesAdd();" class="w3-btn w3-flat-belize-hole w3-round"> No </a>
 <!-- I decided to put covid, cold, and flu as "Yes" for sore throat as a symptom because they were considered 
 "sometimes" on the chart. I have rarely heard of sore throat as a symptom of allergies, so I put that as a "No." -->   
 
 </div>
 <!-- Separates page 5 & 6 -->
 <div class="page" id="six">
-	<div class="w3-container w3-purple">
+	<div class="w3-container w3-flat-belize-hole">
 		<h1>Question 6</h1>
 	</div>
 	
 	<div id="content" class="w3-container">
 		<p>Have you been experiencing frequent fevers for consecutive days?</p>
 	</div>
-        <a href="#seven" onclick="covidAdd();fluAdd();" class="w3-btn w3-purple w3-round"> Yes </a>
+        <a href="#seven" onclick="covidAdd();fluAdd();" class="w3-btn w3-flat-belize-hole w3-round"> Yes </a>
 <!-- Each "href" tag states the page number that the app needs to be directed to. -->
-        <a href="#seven" onclick="coldAdd();allergiesAdd();" class="w3-btn w3-purple w3-round"> No </a>
+        <a href="#seven" onclick="coldAdd();allergiesAdd();" class="w3-btn w3-flat-belize-hole w3-round"> No </a>
 <!-- I put covid and flu as "Yes" for fevers and cold and allergies as "No." 
 I chose to not put a "sometimes" option because that can be very vague and may distort the results, 
 so I stuck with keeping fevers as a yes in covid and the flu (in which they are more common).-->		 
@@ -213,81 +213,81 @@ so I stuck with keeping fevers as a yes in covid and the flu (in which they are 
 </div>
 <!-- Separates page 6 & 7 -->
 <div class="page" id="seven">
-	<div class="w3-container w3-purple">
+	<div class="w3-container w3-flat-belize-hole">
 		<h1>Question 7</h1>
 	</div>
 	
 	<div id="content" class="w3-container">
 		<p>Are you feeling fatigue (tiredness or weakness)?</p>
 	</div>
-        <a href="#eight" onclick="covidAdd();fluAdd();coldAdd();" class="w3-btn w3-purple w3-round"> Yes </a>
+        <a href="#eight" onclick="covidAdd();fluAdd();coldAdd();" class="w3-btn w3-flat-belize-hole w3-round"> Yes </a>
 <!-- Each "href" tag states the page number that the app needs to be directed to. -->
-        <a href="#eight" onclick="allergiesAdd();" class="w3-btn w3-purple w3-round"> No </a>
+        <a href="#eight" onclick="allergiesAdd();" class="w3-btn w3-flat-belize-hole w3-round"> No </a>
 <!-- Fatigue is more common with covid, flu, and cold than it is for allergies, so I put the first three as "Yes" 
 and allergies as "No."-->		 
 
 </div>
 <!-- Separates page 7 & 8 -->
 <div class="page" id="eight">
-	<div class="w3-container w3-purple">
+	<div class="w3-container w3-flat-belize-hole">
 		<h1>Question 8</h1>
 	</div>
 	
 	<div id="content" class="w3-container">
 		<p>Have you been getting headaches?</p>
 	</div>
-        <a href="#nine" onclick="covidAdd();fluAdd();allergiesAdd();" class="w3-btn w3-purple w3-round"> Yes </a>
+        <a href="#nine" onclick="covidAdd();fluAdd();allergiesAdd();" class="w3-btn w3-flat-belize-hole w3-round"> Yes </a>
 <!-- Each "href" tag states the page number that the app needs to be directed to. -->
-        <a href="#nine" onclick="coldAdd();" class="w3-btn w3-purple w3-round"> No </a>
+        <a href="#nine" onclick="coldAdd();" class="w3-btn w3-flat-belize-hole w3-round"> No </a>
 <!-- Headaches are mostly common with the flu, but also sometimes with allergies and covid, so I put those all as "Yes." 
 It is rare with colds, so I put cold as "No."-->		 
 
 </div>
 <!-- Separates page 8 & 9 -->
 <div class="page" id="nine">
-	<div class="w3-container w3-purple">
+	<div class="w3-container w3-flat-belize-hole">
 		<h1>Question 9</h1>
 	</div>
 	
 	<div id="content" class="w3-container">
 		<p>Have you been experiencing body aches and pains?</p>
 	</div>
-        <a href="#ten" onclick="covidAdd();fluAdd();coldAdd();" class="w3-btn w3-purple w3-round"> Yes </a>
+        <a href="#ten" onclick="covidAdd();fluAdd();coldAdd();" class="w3-btn w3-flat-belize-hole w3-round"> Yes </a>
 <!-- Each "href" tag states the page number that the app needs to be directed to. -->
-        <a href="#ten" onclick="allergiesAdd();" class="w3-btn w3-purple w3-round"> No </a>
+        <a href="#ten" onclick="allergiesAdd();" class="w3-btn w3-flat-belize-hole w3-round"> No </a>
 <!-- Body aches occur commonly with the flu and cold, but also sometimes with covid, so those are all "Yes." 
 It it not a symptom of allergies, so I put that as "No."-->
 
 </div>
 <!-- Separates page 9 & 10 -->
 <div class="page" id="ten">
-	<div class="w3-container w3-purple">
+	<div class="w3-container w3-flat-belize-hole">
 		<h1>Question 10</h1>
 	</div>
 	
 	<div id="content" class="w3-container">
 		<p>Have you been experiencing diarrhea?</p>
 	</div>
-        <a href="#eleven" onclick="covidAdd();" class="w3-btn w3-purple w3-round"> Yes </a>
+        <a href="#eleven" onclick="covidAdd();" class="w3-btn w3-flat-belize-hole w3-round"> Yes </a>
 <!-- Each "href" tag states the page number that the app needs to be directed to. -->
-        <a href="#eleven" onclick="coldAdd();fluAdd();allergiesAdd();" class="w3-btn w3-purple w3-round"> No </a>
+        <a href="#eleven" onclick="coldAdd();fluAdd();allergiesAdd();" class="w3-btn w3-flat-belize-hole w3-round"> No </a>
 <!-- Diarrhea is only really a symptom of covid, so I only put "Yes" for that.-->
 
 </div>
 <!-- Separates page 10 & 11 -->
 <div class="page" id="eleven">
-	<div class="w3-container w3-purple">
+	<div class="w3-container w3-flat-belize-hole">
 		<h1>Question 11</h1>
 	</div>
 	
 	<div id="content" class="w3-container">
 		<p>How quickly and long have you been experiencing your symptoms?</p>
 	</div>
-        <a href="#results" onclick="coldAdd();" class="w3-btn w3-purple w3-round"> Gradual onset; less than 2 weeks </a>
+        <a href="#results" onclick="coldAdd();" class="w3-btn w3-flat-belize-hole w3-round"> Gradual onset; less than 2 weeks </a>
 <!-- Each "href" tag states the page number that the app needs to be directed to. -->
-        <a href="#results" onclick="fluAdd()" class="w3-btn w3-purple w3-round"> Abrupt onset; 1-2 weeks </a>
-        <a href="#results" onclick="allergiesAdd();" class="w3-btn w3-purple w3-round"> Abrupt onset; several weeks </a>
-        <a href="#results" onclick="covidAdd();" class="w3-btn w3-purple w3-round"> Abrupt onset; 7-25 days </a>
+        <a href="#results" onclick="fluAdd()" class="w3-btn w3-flat-belize-hole w3-round"> Abrupt onset; 1-2 weeks </a>
+        <a href="#results" onclick="allergiesAdd();" class="w3-btn w3-flat-belize-hole w3-round"> Abrupt onset; several weeks </a>
+        <a href="#results" onclick="covidAdd();" class="w3-btn w3-flat-belize-hole w3-round"> Abrupt onset; 7-25 days </a>
 <!-- I assigned these last four based on the top of the chart that described the length and onset of symptoms. 
 They all vary quite a bit, so I made a different option for each of them.-->
 
@@ -295,12 +295,12 @@ They all vary quite a bit, so I made a different option for each of them.-->
 <!-- Separates page 11 & 12 (results) -->
 <div class="page" id="results">
 <!-- The code below is for the "results" page that displays the results from the questionnaire. -->
-	<div id="header" class="w3-container w3-purple">
+	<div id="header" class="w3-container w3-flat-belize-hole">
 		<h1>Results</h1>
-		<canvas id="a" width = "300" height = "225" style = "border:1px solid #000000;"> 
-		</canvas>
 	</div>
-		<p><button canvas = "a" onclick= "displayResults();" class="w3-btn w3-flat-pumpkin"> Display Results </button></p>
+	<canvas id="a" width = "300" height = "225" style = "border:1px solid #000000;"> 
+		</canvas>
+		<p><button canvas = "a" onclick= "displayResults();" class="w3-btn w3-flat-silver"> Display Results </button></p>
 	
 	<script>
 		function showResults(){
@@ -310,105 +310,15 @@ They all vary quite a bit, so I made a different option for each of them.-->
 			var coldPercent = (((cold_count)/(total))*100);
 			var fluPercent = (((flu_count)/(total))*100);
 			var allergiesPercent = (((allergies_count)/(total))*100);
+			resultText.innerHTML = "Probability that you have COVID-19 =" + covidPercent + "Probability that you have a cold =" + coldPercent + "Probability that you have the flu =" + fluPercent + "Probability that you have seasonal allergies =" + allergiesPercent;
+
 		}
-		function drawLine(ctx, startX, startY, endX, endY,color){
-   			ctx.save();
-   			ctx.strokeStyle = color;
-   			ctx.beginPath();
-   			ctx.moveTo(startX,startY);
-  			ctx.lineTo(endX,endY);
- 			ctx.stroke();
-   			ctx.restore();
-		}
-		function drawBar(ctx, upperLeftCornerX, upperLeftCornerY, width, height,color){
-  			ctx.save();
-			ctx.fillStyle=color;
-			ctx.fillRect(upperLeftCornerX,upperLeftCornerY,width,height);
-			ctx.restore();
-		}
-		var myVinyls = {
-  			"COVID-19": var covidPercent,
-   			"Cold": var coldPercent,
-			"Flu": var fluPercent,
-			"Seasonal Allergies": var allergiesPercent
-		
-		};
-		var Barchart = function(options){
-    this.options = options;
-    this.canvas = options.canvas;
-    this.ctx = this.canvas.getContext("2d");
-    this.colors = options.colors;
-  
-    this.draw = function(){
-        var maxValue = 0;
-        for (var categ in this.options.data){
-            maxValue = Math.max(maxValue,this.options.data[categ]);
-        }
-        var canvasActualHeight = this.canvas.height - this.options.padding * 2;
-        var canvasActualWidth = this.canvas.width - this.options.padding * 2;
- 
-        //drawing the grid lines
-        var gridValue = 0;
-        while (gridValue <= maxValue){
-            var gridY = canvasActualHeight * (1 - gridValue/maxValue) + this.options.padding;
-            drawLine(
-                this.ctx,
-                0,
-                gridY,
-                this.canvas.width,
-                gridY,
-                this.options.gridColor
-            );
-             
-            //writing grid markers
-            this.ctx.save();
-            this.ctx.fillStyle = this.options.gridColor;
-            this.ctx.font = "bold 10px Arial";
-            this.ctx.fillText(gridValue, 10,gridY - 2);
-            this.ctx.restore();
- 
-            gridValue+=this.options.gridScale;
-        }
-  
-        //drawing the bars
-        var barIndex = 0;
-        var numberOfBars = Object.keys(this.options.data).length;
-        var barSize = (canvasActualWidth)/numberOfBars;
- 
-        for (categ in this.options.data){
-            var val = this.options.data[categ];
-            var barHeight = Math.round( canvasActualHeight * val/maxValue) ;
-            drawBar(
-                this.ctx,
-                this.options.padding + barIndex * barSize,
-                this.canvas.height - barHeight - this.options.padding,
-                barSize,
-                barHeight,
-                this.colors[barIndex%this.colors.length]
-            );
- 
-            barIndex++;
-        }
-  
-    }
-}
-		var myBarchart = new Barchart(
-    {
-        canvas:myCanvas,
-        padding:10,
-        gridScale:5,
-        gridColor:"#eeeeee",
-        data:myVinyls,
-        colors:["#a55ca5","#67b6c7", "#bccd7a","#eb9743"]
-    }
-);
-myBarchart.draw();
 		// The results portion of my code from App 3 functioned properly, so I simply used that same code in this questionnaire, modifying the variables and functions to match my health issue for app 4. 
 	</script>
-    
+		<a href="#results" onclick="showResults();" class="w3-btn w3-flat-belize-hole"> Show Results </a>
 </div>	
 <!-- Below is the footer, which was left unmodified from the forked code. -->
-<footer class="w3-bottom w3-container w3-purple">
+<footer class="w3-bottom w3-container w3-flat-belize-hole">
 	<p>DIY!</p>
 </footer> 
  
