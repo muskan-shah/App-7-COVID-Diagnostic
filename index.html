@@ -294,24 +294,117 @@ They all vary quite a bit, so I made a different option for each of them.-->
 </div>	
 <!-- Separates page 11 & 12 (results) -->
 <div class="page" id="results">
-<!-- The code below is for the "results" page that displays the percentages from the questionnaire. -->
+<!-- The code below is for the "results" page that displays the results from the questionnaire. -->
 	<div id="header" class="w3-container w3-purple">
 		<h1>Results</h1>
+		<canvas id="a" width = "300" height = "225" style = "border:1px solid #000000;"> 
+		</canvas>
 	</div>
-		
+		<p><button canvas = "a" onclick= "displayResults();" class="w3-btn w3-flat-pumpkin"> Display Results </button></p>
+	
 	<script>
-	function showResults(){
-            var resultText = document.getElementById("results");
-	    var total = fracture_count + sprain_count;
-	    var fracturePercent = (((fracture_count)/(total))*100);
-	    var sprainPercent = (((sprain_count)/(total))*100);
-    	    resultText.innerHTML = "Probability it is a fracture =" + fracturePercent + "<br> Probability it is a sprain =" + sprainPercent;
-	}
+		function showResults(){
+           		var resultText = document.getElementById("results");
+	   		var total = covid_count + cold_count + flu_count + allergies_count;
+			var covidPercent = (((covid_count)/(total))*100);
+			var coldPercent = (((cold_count)/(total))*100);
+			var fluPercent = (((flu_count)/(total))*100);
+			var allergiesPercent = (((allergies_count)/(total))*100);
+		}
+		function drawLine(ctx, startX, startY, endX, endY,color){
+   			ctx.save();
+   			ctx.strokeStyle = color;
+   			ctx.beginPath();
+   			ctx.moveTo(startX,startY);
+  			ctx.lineTo(endX,endY);
+ 			ctx.stroke();
+   			ctx.restore();
+		}
+		function drawBar(ctx, upperLeftCornerX, upperLeftCornerY, width, height,color){
+  			ctx.save();
+			ctx.fillStyle=color;
+			ctx.fillRect(upperLeftCornerX,upperLeftCornerY,width,height);
+			ctx.restore();
+		}
+		var myVinyls = {
+  			"COVID-19": var covidPercent,
+   			"Cold": var coldPercent,
+			"Flu": var fluPercent,
+			"Seasonal Allergies": var allergiesPercent
+		
+		};
+		var Barchart = function(options){
+    this.options = options;
+    this.canvas = options.canvas;
+    this.ctx = this.canvas.getContext("2d");
+    this.colors = options.colors;
+  
+    this.draw = function(){
+        var maxValue = 0;
+        for (var categ in this.options.data){
+            maxValue = Math.max(maxValue,this.options.data[categ]);
+        }
+        var canvasActualHeight = this.canvas.height - this.options.padding * 2;
+        var canvasActualWidth = this.canvas.width - this.options.padding * 2;
+ 
+        //drawing the grid lines
+        var gridValue = 0;
+        while (gridValue <= maxValue){
+            var gridY = canvasActualHeight * (1 - gridValue/maxValue) + this.options.padding;
+            drawLine(
+                this.ctx,
+                0,
+                gridY,
+                this.canvas.width,
+                gridY,
+                this.options.gridColor
+            );
+             
+            //writing grid markers
+            this.ctx.save();
+            this.ctx.fillStyle = this.options.gridColor;
+            this.ctx.font = "bold 10px Arial";
+            this.ctx.fillText(gridValue, 10,gridY - 2);
+            this.ctx.restore();
+ 
+            gridValue+=this.options.gridScale;
+        }
+  
+        //drawing the bars
+        var barIndex = 0;
+        var numberOfBars = Object.keys(this.options.data).length;
+        var barSize = (canvasActualWidth)/numberOfBars;
+ 
+        for (categ in this.options.data){
+            var val = this.options.data[categ];
+            var barHeight = Math.round( canvasActualHeight * val/maxValue) ;
+            drawBar(
+                this.ctx,
+                this.options.padding + barIndex * barSize,
+                this.canvas.height - barHeight - this.options.padding,
+                barSize,
+                barHeight,
+                this.colors[barIndex%this.colors.length]
+            );
+ 
+            barIndex++;
+        }
+  
+    }
+}
+		var myBarchart = new Barchart(
+    {
+        canvas:myCanvas,
+        padding:10,
+        gridScale:5,
+        gridColor:"#eeeeee",
+        data:myVinyls,
+        colors:["#a55ca5","#67b6c7", "#bccd7a","#eb9743"]
+    }
+);
+myBarchart.draw();
 		// The results portion of my code from App 3 functioned properly, so I simply used that same code in this questionnaire, modifying the variables and functions to match my health issue for app 4. 
 	</script>
-	
-	<a href="#results" onclick="showResults();" class="w3-btn w3-black"> Show Results </a>
-</div>
     
 </div>	
 <!-- Below is the footer, which was left unmodified from the forked code. -->
