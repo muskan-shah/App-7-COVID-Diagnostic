@@ -20,8 +20,8 @@ Brief Description of Goal of Code:
 The goal of this code is create my own survey to "diagnose" patients with COVID-19 vs. other sicknesses (eg., cold, flu, seasonal allergies). Another goal is to display these results with some sort of visual using the canvas.
  
 Known Issues:
-The coding of this app is very similar to that of app 4. I knew the "results" page was what I struggled with most in app 3, so I made sure to really go through the code for that section carefully, line-by-line, to look for potential errors. Other then that, this app went fairly smoothly, including adding the image.
-Going back and looking through the rubric from app 3, I noticed my header for the results page disappears when the percentages appear. I tried testing several different solutions (creating a new page, getting rid of the show results button and having the app go directly to the results instead, etc.), but I was unable to figure out a solution that worked. I had this same issue last app as well, and am hoping a mentor may be able to give me some more insight into how to solve this issue.
+The coding of this app is very similar to that of app 4. This app went fairly smoothly, including adding the image. However, I was unable to get the results to display in a pie chart or bar graph in the canvas like I had intended for it to. So I had to document that I failed and went ahead and changed the results back to the way they were being displayed before. This is definitely not how I wanted them to be shown, as it is boring and not visually appealing at all. I mentioned this at the bottom, but I think 4 doughnut charts with the percenttages of each illness inside the chart would be an effective way to display the results visually (but I cannot figure out how to code that). 
+I also noticed my header for the results page disappears when the percentages appear. I tried testing several different solutions (creating a new page, getting rid of the show results button and having the app go directly to the results instead, etc.), but I was unable to figure out a solution that worked. 
 -->
 
    <head> 
@@ -59,7 +59,10 @@ Going back and looking through the rubric from app 3, I noticed my header for th
             allergies_count = allergies_count + 1;
         }
 	
-	//To make sure a count is added to the proper corresponding option each time it is chosen, I created the functions above. The functions add one each to the total count each time it is chosen.
+	//To make sure a count is added to the proper corresponding option each time it is chosen, I created the functions above. 
+	//The functions add one count to the total each time it is chosen.
+	//I chose to compare all 4 illnesses because that would give the person taking the survey a better idea of their diagnosis.
+	
 
   </script>
 
@@ -94,7 +97,7 @@ Going back and looking through the rubric from app 3, I noticed my header for th
 	
 <body>
 	<!-- This starts the "body" section of the app and is where I inserted the header text. -->
-<div id="header" class="w3-container w3-purple">
+<div id="header" class="w3-container w3-flat-belize-hole">
 	<!-- Below is the header -->
 	<h1> Corona Catcher </h1>
 </div>
@@ -103,14 +106,14 @@ Going back and looking through the rubric from app 3, I noticed my header for th
 	<!-- The "p" tags below are where the text go. -->
 	<p>Are you feeling symptoms of a cold or allergies, but are scared it may be something worse like COVID-19? Take this short quiz to get a better idea of what diagnosis your symptoms indicate!</p>
 	<!-- The "href" tags are essential to keep track of your pages. -->
-	<a href="#one" class="w3-btn w3-purple w3-round"> Get Started </a>
+	<a href="#one" class="w3-btn w3-flat-belize-hole w3-round"> Get Started </a>
 	
 	<p>The following code has been developed by students and/or researchers of the Freshman Research Initiative DIY Diagnostics Stream at The University of Texas at 		Austin.  This code is shared for demonstration purposes and should not be considered a product -- it is for entertainment purposes only. Any user of this code 			does so at their own risk. Members of the DIY Stream, FRI, and The University of Texas system are not liable for anything related to this code.</p>
  	
 	<p>THIS CODE SHOULD NOT BE USED TO DIAGNOSE ANY KIND OF MEDICAL CONDITION.</p>
 	
-	<!--Below I inserted the code for my image -->
-	<img src="https://physio.ie/wp-content/uploads/2015/02/Ankle-Sprain-rs-1024x878.jpg" alt="Twisted Ankle" width="300" height="257">
+	<!--Below I inserted the code for my image. I chose this image because it shows people being sick, without being specific to one kind of disease (don't know what they're sick with). -->
+	<img src="https://www.sheknows.com/wp-content/uploads/2020/02/how-to-stay-healthy-when-everyone-in-the-house-sick.png?resize=1280,720" alt="Sick People" width="500" height="250">
 	
 <div class="page" id="one">
 	<!-- This is the first page to the quiz. -->
@@ -139,20 +142,19 @@ Going back and looking through the rubric from app 3, I noticed my header for th
 	</div>
         <a href="#three" onclick="covidAdd();" class="w3-btn w3-flat-belize-hole w3-round"> Yes </a>
 <!-- Each "href" tag states the page number that the app needs to be directed to. -->
-        <a href="#three" onclick="allergiesAdd();coldAdd();fluAdd();" class="w3-btn w3-purple w3-round"> No </a>
+        <a href="#three" onclick="allergiesAdd();coldAdd();fluAdd();" class="w3-btn w3-flat-belize-hole w3-round"> No </a>
 <!-- For shortness of breath, corona is the only illness that has it as a symptom, so it is the only variable that will be counted for if the patient answers yes.  -->
  
 </div>	
 <!-- Separates page 2 & 3 -->
 <div class="page" id="three">
-	<div class="w3-container w3-purple">
+	<div class="w3-container w3-flat-belize-hole">
 		<h1>Question 3</h1>
 	</div>
 	
 	<div id="content" class="w3-container">
 		<p>Are you sneezing regularly?</p>
-		<img src="https://www.fastmed.com/wp-content/files/health-resources/related-searches/287px-Sprained_ankle_30min-process-s350x293.jpg" alt="Swollen Ankle" width="287" height="240">
-
+		
 	</div>
 <!-- Each "href" tag states the page number that the app needs to be directed to. -->
         <a href="#four" onclick="allergiesAdd();coldAdd()" class="w3-btn w3-flat-belize-hole w3-round"> Yes </a>
@@ -300,8 +302,8 @@ They all vary quite a bit, so I made a different option for each of them.-->
 	</div>
 	<canvas id="a" width = "300" height = "225" style = "border:1px solid #000000;"> 
 		</canvas>
-		<p><button canvas = "a" onclick= "displayResults();" class="w3-btn w3-flat-silver"> Display Results </button></p>
-	
+	<!-- I added the canvas to the results, however I was unsuccesful in trying to get results to show up on the canvas. I had originally wanted a pie chart or bar graph to show up. I knew some of the other Makerspace girls had tried to create a pie chart, so I tried to find code to create a bar graph. Unfortunately, the code I found didn't work and I was unable to get anything to display on my canvas. (This code can be seen because I committed the changes.) I tried following the code to find where the disconnect was between the canvas and displaying the results, but I couldn't really understand it as it was more advanced than what I know/have worked with. I decided to go back to the way the results were displayed in App 4 (as percentages) so at least I could get my results to show up in some form. --> 
+	<!-- I think an interesting way to display results would be to use four doughnut charts for each illness with the percentage of that illness (rounded to the nearest whole number) inside the hole. An example of this type of chart can be found in my ELN. That is very visually appealing and interesting to understand. I can't figure how to code that and the code libraries I've tried haven't worked, so I am reverting back to the old way to display results. -->
 	<script>
 		function showResults(){
            		var resultText = document.getElementById("results");
@@ -313,9 +315,12 @@ They all vary quite a bit, so I made a different option for each of them.-->
 			resultText.innerHTML = "Probability that you have COVID-19 =" + covidPercent + "Probability that you have a cold =" + coldPercent + "Probability that you have the flu =" + fluPercent + "Probability that you have seasonal allergies =" + allergiesPercent;
 
 		}
-		// The results portion of my code from App 3 functioned properly, so I simply used that same code in this questionnaire, modifying the variables and functions to match my health issue for app 4. 
+		// The results portion of my code from App 4 functioned properly, so I simply used that same code in this questionnaire, modifying the variables and functions to match survey for app 7. 
 	</script>
+
 		<a href="#results" onclick="showResults();" class="w3-btn w3-flat-belize-hole"> Show Results </a>
+		<!--This button here is what the survey takers click to be directed to their results. When this is clicked, the showResults function is activated, producing the percantages of each illness as a results page. -->
+	
 </div>	
 <!-- Below is the footer, which was left unmodified from the forked code. -->
 <footer class="w3-bottom w3-container w3-flat-belize-hole">
